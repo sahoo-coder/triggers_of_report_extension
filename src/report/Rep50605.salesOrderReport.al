@@ -37,6 +37,7 @@ report 50605 salesOrderReport
             begin
                 salesShipmentline.SetRange("Order No.", "Sales Line"."Document No.");
                 salesShipmentline.SetRange("No.", "Sales Line"."No.");
+                salesShipmentline.SetRange("Line No.", "Sales Line"."Line No.");
                 if salesShipmentline.FindFirst() then begin
                     shippedQuantity := salesShipmentline.Quantity;
                     shippedAmount := salesShipmentline."VAT Base Amount";
@@ -46,6 +47,7 @@ report 50605 salesOrderReport
 
                 salesinvoiceLine.SetRange("Order No.", "Sales Line"."Document No.");
                 salesinvoiceLine.SetRange("No.", "Sales Line"."No.");
+                salesinvoiceLine.SetRange("Line No.", "Sales Line"."Line No.");
                 if salesinvoiceLine.FindFirst() then begin
                     invoicedQuantity := salesinvoiceLine.Quantity;
                     invoicedAmount := salesinvoiceLine.Amount;
